@@ -1,0 +1,60 @@
+.header-search {
+  align-items: flex-end;
+  background-color: rgb(22, 27, 34);
+  color: #f0f6fc;
+  display: flex;
+  font-size: x-large;
+  font-weight: 500;
+  gap: 35px;
+  margin-top: 0;
+  padding: 15px 50px;
+  position: absolute;
+  width: 100%;
+}
+
+.div-logo-user {
+  align-items: center;
+  display: flex;
+}
+
+.div-logo-user > div {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+}
+
+.user-headphones {
+  background-color: #f0f6fc;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.name {
+  color: rgb(52, 113, 223);
+  font-size: 2rem;
+}
+
+.header-search nav ul {
+  align-items: center;
+  display: flex;
+  height: 52px;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-left: 0;
+  width: 320px;
+}
+
+.header-search li {
+  color: #f0f6fc;
+  list-style: none;
+  transition: color 0.1s;
+}
+
+.header-search li:hover {
+  color: rgb(52, 113, 223);
+}
+
+.link {
+  text-decoration: none;
+}

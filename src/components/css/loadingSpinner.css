@@ -1,0 +1,28 @@
+.spinner {
+  display: flex;
+  gap: 8px;
+}
+
+.spinner > .dot {
+  animation: blur 0.5s infinite alternate;
+  background-color: white;
+  border-radius: 50%;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+.spinner > .dot:nth-child( 2 ) {
+  animation-delay: 200ms;
+}
+
+.spinner > .dot:nth-child( 3 ) {
+  animation-delay: 400ms;
+}
+
+@keyframes blur {
+
+  to {
+    filter: blur(2px);
+    opacity: 0;
+  }
+}

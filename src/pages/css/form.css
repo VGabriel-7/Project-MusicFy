@@ -1,0 +1,28 @@
+.form {
+  background-color: rgba(0, 0, 0, 0.381);
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgb(134, 133, 133);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+  margin: auto;
+  padding: 30px 30px 55px;
+  width: 350px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: auto;
+  margin-top: 10%;
+}
+
+.login {
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%);
+}
