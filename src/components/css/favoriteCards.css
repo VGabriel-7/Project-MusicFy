@@ -1,0 +1,44 @@
+.main-favorite-cards {
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(34, 111, 199, 0.12) , 0
+    3px 1px -2px rgba(34, 111, 199, 0.12) , 0
+    1px 5px 0 rgba(34, 111, 199, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 300px;
+  padding: 35px;
+  width: 90%;
+}
+
+.div-audio {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.div-audio audio {
+  height: 35px;
+  width: 100rem;
+}
+
+.label-favorite {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.div-thumbnail {
+  height: 150px;
+  text-align: center;
+  width: 100%;
+}
+
+.thumbnail-album {
+  width: 140px;
+}
+
+.trackName {
+  color: var(--textWhite);
+}

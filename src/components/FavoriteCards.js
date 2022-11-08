@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Loading from './Loading';
 import { removeSong } from '../services/favoriteSongsAPI';
+import './css/favoriteCards.css';
 
 class FavoriteCards extends React.Component {
   constructor() {
@@ -18,6 +19,7 @@ class FavoriteCards extends React.Component {
         { checked: false, loading: true },
         this.removeFavoriteSong,
       );
+      window.location.reload();
     }
   }
 
@@ -32,38 +34,42 @@ class FavoriteCards extends React.Component {
       previewUrl,
       trackName,
       trackId,
+      artworkUrl100,
+      // collectionName,
     } = this.props;
     const { loading, checked } = this.state;
     return (
       <div>
-        {loading ? <Loading />
-          : (
-            <div>
-              {checked && (
-                <>
-                  <p>{trackName}</p>
-                  <audio data-testid="audio-component" src={ previewUrl } controls>
-                    <track kind="captions" />
-                    O seu navegador não suporta o formato desse arquivo.
-                    <code>audio</code>
-                  </audio>
-                  <form>
-                    <label htmlFor="favoriteMusic">
-                      <p>Favorita</p>
-                      <input
-                        id="favoriteMusic"
-                        type="checkbox"
-                        data-testid={ `checkbox-music-${trackId}` }
-                        onChange={ this.handleChecked }
-                        checked={ checked }
-                      />
-                      {loading && <Loading />}
-                    </label>
-                  </form>
-                </>
-              )}
+        {checked && (
+          <div className="main-favorite-cards">
+            <div
+              className="div-thumbnail"
+              style={ {
+                background: `url("${artworkUrl100}") no-repeat center center / cover` } }
+            />
+            <h4 className="trackName">{trackName}</h4>
+            <div className="div-audio">
+              <audio data-testid="audio-component" src={ previewUrl } controls>
+                <track kind="captions" />
+                O seu navegador não suporta o formato desse arquivo.
+                <code>audio</code>
+              </audio>
+              <form>
+                <label htmlFor="favoriteMusic" className="label-favorite">
+                  <input
+                    id="favoriteMusic"
+                    type="checkbox"
+                    data-testid={ `checkbox-music-${trackId}` }
+                    onChange={ this.handleChecked }
+                    checked={ checked }
+                    className="fas fa-star"
+                  />
+                  {loading && <Loading />}
+                </label>
+              </form>
             </div>
-          )}
+          </div>
+        )}
       </div>
     );
   }

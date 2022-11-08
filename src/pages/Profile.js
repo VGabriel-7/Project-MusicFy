@@ -15,6 +15,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.getInformUser();
+    document.title = 'Profile';
   }
 
   getInformUser = () => {

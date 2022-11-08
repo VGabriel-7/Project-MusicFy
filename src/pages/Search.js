@@ -19,6 +19,10 @@ class Search extends React.Component {
     };
   }
 
+  componentDidMount() {
+    document.title = 'Search Song';
+  }
+
   buttonValidation = ({ target }) => {
     this.setState({ inputArtistName: target.value });
     const validCharacters = 2;
@@ -81,7 +85,7 @@ class Search extends React.Component {
                   />
                 </button>
               </form>
-              <div className="div-atist-results">
+              <div className="div-results">
                 <p>
                   Resultado de álbuns de:
                   {' '}

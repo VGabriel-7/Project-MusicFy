@@ -20,7 +20,9 @@ class CardSearch extends React.Component {
         <div className="card-search">
           <img src={ artworkUrl100 } alt={ collectionName } />
           <div className="collection-name"><p>{ collectionName }</p></div>
-          <p>{ artistName }</p>
+          <p>
+            { artistName }
+          </p>
         </div>
       </Link>
     );

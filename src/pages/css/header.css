@@ -1,4 +1,4 @@
-.header-search {
+.header {
   align-items: flex-end;
   background-color: rgb(22, 27, 34);
   color: #f0f6fc;
@@ -35,7 +35,7 @@
   font-size: 2rem;
 }
 
-.header-search nav ul {
+.header nav ul {
   align-items: center;
   display: flex;
   height: 52px;
@@ -45,13 +45,13 @@
   width: 320px;
 }
 
-.header-search li {
+.header li {
   color: #f0f6fc;
   list-style: none;
   transition: color 0.1s;
 }
 
-.header-search li:hover {
+.header li:hover {
   color: rgb(52, 113, 223);
 }
 

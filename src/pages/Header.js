@@ -34,7 +34,7 @@ class Header extends React.Component {
   render() {
     const { loading, nameUser } = this.state;
     return (
-      <header data-testid="header-component" className="header-search">
+      <header data-testid="header-component" className="header">
         <Link className="link" to="/profile">
           <div className="div-logo-user">
             <img

@@ -26,3 +26,45 @@ code {
   display: flex;
   justify-content: center;
 }
+
+:root {
+  --mainColor: rgb(1,4,9);
+  --highColor: rgb(52, 113, 223);
+  --textWhite: rgb(240, 246, 252);
+}
+
+
+.div-results {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 90%;
+  width: 70%;
+}
+
+.results {
+  align-items: center;
+  background-color: rgba(71, 73, 76, 0.089);
+  /* border: 1px solid yellow; */
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  height: 90%;
+  justify-content: space-evenly;
+  overflow-y: scroll;
+  padding: 15px;
+  width: 100%;
+}
+
+.results::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 4s;
+  width: 10px;
+}
+
+.results::-webkit-scrollbar-thumb {
+  background-color: rgb(52, 113, 223);
+  border-radius: 20px;
+}
