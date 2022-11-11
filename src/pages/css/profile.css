@@ -1,0 +1,84 @@
+.main-profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.profile {
+  align-items: center;
+  background: var(--backColor);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  max-width: 350px;
+  min-height: 382px;
+  min-width: 300px;
+}
+
+.div-profile {
+  align-items: center;
+  background: var(--backColor);
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(34, 111, 199, 0.12) , 0
+    3px 1px -2px rgba(34, 111, 199, 0.12) , 0
+    1px 5px 0 rgba(34, 111, 199, 0.2);
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+  gap: 10px;
+  height: 50%;
+  max-height: 350px;
+  max-width: 350px;
+  min-height: 380px;
+  min-width: 300px;
+  padding: 10px;
+}
+
+.img-profile {
+  align-self: center;
+  border-radius: 50%;
+  box-shadow: 0 0 7px 2px rgba(11, 104, 209, 0.718);
+  max-height: 170px;
+  max-width: 170px;
+}
+
+.link-to-edit-profile, .link-to-edit-profile:visited {
+  color: rgba(52, 112, 223, 0.309);
+  transition: color 0.1s;
+}
+
+.link-to-edit-profile:hover {
+  color: var(--highColor);
+}
+
+.div-infos {
+  padding: 15px;
+  width: 80%;
+}
+
+.profile-name {
+  color: var(--textWhite);
+}
+
+.profile-email {
+  color: var(--textWhite);
+}
+
+.profile-description {
+  color: var(--textWhite);
+}
+
+.div-buttons {
+  display: flex;
+  gap: 15px;
+  width: 299px;
+}
+
+.btn {
+  height: 40px;
+  width: 50%;
+}

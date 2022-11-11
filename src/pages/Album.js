@@ -17,6 +17,11 @@ class Album extends React.Component {
   }
 
   componentDidMount() {
+    const { history: { push } } = this.props;
+
+    if (!localStorage.getItem('user')) return push('/');
+
+    document.title = 'Album';
     this.getAlbumMusic();
   }
 
@@ -64,6 +69,7 @@ class Album extends React.Component {
 
 Album.propTypes = {
   match: propTypes.object,
+  push: propTypes.func,
 }.isRequired;
 
 export default Album;

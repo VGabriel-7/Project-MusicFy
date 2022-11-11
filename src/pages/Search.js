@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-max-depth */
 import React from 'react';
+import propTypes from 'prop-types';
 import Header from './Header';
 import searchAlbunsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
@@ -20,6 +21,10 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    const { history: { push } } = this.props;
+
+    if (!localStorage.getItem('user')) return push('/');
+
     document.title = 'Search Song';
   }
 
@@ -85,12 +90,12 @@ class Search extends React.Component {
                   />
                 </button>
               </form>
+              <p>
+                Resultado de álbuns de:
+                {' '}
+                { artistiName }
+              </p>
               <div className="div-results">
-                <p>
-                  Resultado de álbuns de:
-                  {' '}
-                  { artistiName }
-                </p>
                 {loading
                   ? <Loading />
                   : (
@@ -124,5 +129,9 @@ class Search extends React.Component {
     );
   }
 }
+
+Search.propTypes = {
+  push: propTypes.func,
+}.isRequired;
 
 export default Search;

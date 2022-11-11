@@ -19,6 +19,8 @@ class Login extends React.Component {
   componentDidMount() {
     const { history: { push } } = this.props;
 
+    document.title = 'Login';
+
     if (localStorage.getItem('user')) push('/search');
   }
 

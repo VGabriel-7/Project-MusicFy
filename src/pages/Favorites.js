@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import Header from './Header';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../components/Loading';
@@ -15,8 +16,12 @@ class Favorites extends React.Component {
   }
 
   componentDidMount() {
+    const { history: { push } } = this.props;
+
+    if (!localStorage.getItem('user')) return push('/');
+
+    document.title = 'Edit Profile';
     this.getFavorites();
-    document.title = 'Favorite Songs';
   }
 
   getFavorites = async () => {
@@ -56,5 +61,9 @@ class Favorites extends React.Component {
     );
   }
 }
+
+Favorites.propTypes = {
+  push: propTypes.func,
+}.isRequired;
 
 export default Favorites;
