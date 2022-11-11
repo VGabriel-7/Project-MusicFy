@@ -1,0 +1,16 @@
+.track-name {
+  color: var(--textWhite);
+}
+
+.div-play-favorite {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.card-music {
+  border: 1px solid var(--textWhite);
+  border-radius: 5px;
+  padding: 15px;
+}

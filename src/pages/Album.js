@@ -4,6 +4,7 @@ import Header from './Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
 import Loading from '../components/Loading';
+import './css/album.css';
 
 class Album extends React.Component {
   constructor() {
@@ -12,6 +13,7 @@ class Album extends React.Component {
       albumMusics: [],
       name: '',
       album: '',
+      imgAlbum: '',
       loading: false,
     };
   }
@@ -32,36 +34,53 @@ class Album extends React.Component {
     this.setState({
       name: albumMusics[0].artistName,
       album: albumMusics[0].collectionName,
+      imgAlbum: albumMusics[0].artworkUrl100,
     });
   }
 
   render() {
-    const { name, albumMusics, album, loading } = this.state;
+    const { name, albumMusics, album, loading, imgAlbum } = this.state;
     return (
       <>
         <Header />
-        {loading
-          ? <Loading />
-          : (
-            <div data-testid="page-album">
-              <h3 data-testid="artist-name">{ name }</h3>
-              <p data-testid="album-name">{ album }</p>
-              {
-                albumMusics.filter((musics) => Object.keys(musics).includes('kind'))
-                  .map((objectMusics) => (
-                    <div key={ objectMusics.artistId }>
-                      <MusicCard
-                        loading={ loading }
-                        previewUrl={ objectMusics.previewUrl }
-                        trackName={ objectMusics.trackName }
-                        trackId={ objectMusics.trackId }
-                        objectMusics={ objectMusics }
-                      />
-                    </div>
-                  ))
-              }
-            </div>
-          )}
+        <section className="main-album">
+          <div className="div-results-album">
+            {loading
+              ? <Loading />
+              : (
+                <div data-testid="page-album" className="results-album">
+                  <div className="div-cantor">
+                    <img
+                      src={ imgAlbum }
+                      alt={ `foto do album de ${name}` }
+                      className="img-album"
+                    />
+                    <h3 data-testid="artist-name">{ name }</h3>
+                    <p data-testid="album-name">{ album }</p>
+                  </div>
+                  <div className="div-music-card scroll-bar">
+                    {
+                      albumMusics.filter((musics) => Object.keys(musics).includes('kind'))
+                        .map((objectMusics) => (
+                          <div
+                            key={ objectMusics.artistId }
+                            className="music-card"
+                          >
+                            <MusicCard
+                              loading={ loading }
+                              previewUrl={ objectMusics.previewUrl }
+                              trackName={ objectMusics.trackName }
+                              trackId={ objectMusics.trackId }
+                              objectMusics={ objectMusics }
+                            />
+                          </div>
+                        ))
+                    }
+                  </div>
+                </div>
+              )}
+          </div>
+        </section>
       </>
     );
   }

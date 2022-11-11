@@ -5,6 +5,8 @@ import { getUser, updateUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 import './css/editProfile.css';
 import iconLink from '../images/link-quebrado.png';
+import iconEmail from '../images/o-email.svg';
+import iconDescription from '../images/edit-info.svg';
 
 class ProfileEdit extends React.Component {
   constructor() {
@@ -85,6 +87,7 @@ class ProfileEdit extends React.Component {
       descriptionUser,
       disable,
     } = this.state;
+    const susgestionImg = 'https://img.quizur.com/f/img5fcd3c2fc28933.70970546.jpg?lastEdited=1607285813';
     return (
       <div>
         <Header />
@@ -94,7 +97,7 @@ class ProfileEdit extends React.Component {
             : (
               <form
                 data-testid="page-profile-edit"
-                className="from-edit-profile"
+                className="form-edit-profile"
               >
                 <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
@@ -102,7 +105,7 @@ class ProfileEdit extends React.Component {
                   </span>
                   <input
                     className="form-control"
-                    placeholder="Username"
+                    placeholder={ `Ex: ${susgestionImg}` }
                     aria-label="Username"
                     aria-describedby="basic-addon1"
                     data-testid="edit-input-image"
@@ -111,37 +114,54 @@ class ProfileEdit extends React.Component {
                     onChange={ this.handleChange }
                   />
                 </div>
-                <input
-                  value={ nameUser }
-                  data-testid="edit-input-name"
-                  type="text"
-                  name="nameUser"
-                  onChange={ this.handleChange }
-                  className="input-name"
-                />
-                <input
-                  value={ emailUser }
-                  data-testid="edit-input-email"
-                  type="email"
-                  name="emailUser"
-                  onChange={ this.handleChange }
-                  className="input-email"
-                />
-                <input
-                  value={ descriptionUser }
-                  data-testid="edit-input-description"
-                  name="descriptionUser"
-                  type="textarea"
-                  rows="4"
-                  cols="50"
-                  onChange={ this.handleChange }
-                  className="input-description"
-                />
+                <div className="input-group mb-3">
+                  <span className="input-group-text edit-name" id="basic-addon1">@</span>
+                  <input
+                    className="form-control"
+                    value={ nameUser }
+                    data-testid="edit-input-name"
+                    type="text"
+                    name="nameUser"
+                    onChange={ this.handleChange }
+                    maxLength="10"
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <img className="img-span" src={ iconEmail } alt="icon link" />
+                  </span>
+                  <input
+                    className="form-control"
+                    value={ emailUser }
+                    data-testid="edit-input-email"
+                    type="email"
+                    name="emailUser"
+                    onChange={ this.handleChange }
+                    maxLength="20"
+                  />
+                </div>
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    <img className="img-span" src={ iconDescription } alt="icon link" />
+                  </span>
+                  <input
+                    className="form-control"
+                    value={ descriptionUser }
+                    data-testid="edit-input-description"
+                    name="descriptionUser"
+                    type="textarea"
+                    rows="4"
+                    cols="50"
+                    onChange={ this.handleChange }
+                    maxLength="20"
+                  />
+                </div>
                 <button
                   data-testid="edit-button-save"
                   type="submit"
                   disabled={ disable }
                   onClick={ this.uploadUser }
+                  className="btn btn-primary"
                 >
                   Salvar
                 </button>

@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Loading from './Loading';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import './css/musicCard.css';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -71,27 +72,28 @@ class MusicCard extends React.Component {
     } = this.props;
     const { loading, checked } = this.state;
     return (
-      <>
-        <p>{trackName}</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o formato desse arquivo.
-          <code>audio</code>
-        </audio>
-        <form>
-          <label htmlFor="favoriteMusic">
-            <p>Favorita</p>
-            <input
-              id="favoriteMusic"
-              type="checkbox"
-              data-testid={ `checkbox-music-${trackId}` }
-              onChange={ this.handleChecked }
-              checked={ checked }
-            />
-            {loading && <Loading />}
-          </label>
-        </form>
-      </>
+      <div className="card-music">
+        <p className="track-name">{trackName}</p>
+        <div className="div-play-favorite">
+          <audio data-testid="audio-component" src={ previewUrl } controls>
+            <track kind="captions" />
+            O seu navegador não suporta o formato desse arquivo.
+            <code>audio</code>
+          </audio>
+          <form>
+            <label htmlFor="favoriteMusic">
+              <input
+                id="favoriteMusic"
+                type="checkbox"
+                data-testid={ `checkbox-music-${trackId}` }
+                onChange={ this.handleChecked }
+                checked={ checked }
+              />
+              {loading && <Loading />}
+            </label>
+          </form>
+        </div>
+      </div>
     );
   }
 }

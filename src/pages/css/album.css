@@ -1,0 +1,68 @@
+.main-album {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.div-results-album {
+  align-items: center;
+  background-color: var(--backColor);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 75%;
+  justify-content: center;
+  width: 70%;
+}
+
+.results-album {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  gap: 15px;
+  height: 100%;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.div-music-card {
+  background-color: rgb(33, 37, 39);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  height: 83%;
+  overflow-y: scroll;
+  padding: 20px;
+  width: 30%;
+}
+
+.scroll-bar::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+  width: 10px;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  background-color: rgb(52, 113, 223);
+  border-radius: 20px;
+}
+
+.div-cantor p, h3 {
+  color: var(--textWhite);
+}
+
+.div-cantor {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 70%;
+  width: 40%;
+}
+
+.img-album {
+  width: 350px;
+}

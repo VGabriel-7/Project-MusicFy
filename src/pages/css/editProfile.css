@@ -9,3 +9,17 @@
 .img-span {
   width: 20px;
 }
+
+.edit-name {
+  color: black;
+  font-size: 20px;
+  font-weight: 430;
+  height: 40px;
+}
+
+.form-edit-profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
