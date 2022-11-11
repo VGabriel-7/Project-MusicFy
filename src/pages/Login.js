@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
 import './css/form.css';
+import logoMusicFy from '../images/musica.png';
 
 class Login extends React.Component {
   constructor() {
@@ -70,7 +71,14 @@ class Login extends React.Component {
           ? <Loading />
           : (
             <>
-              <h1>TrybeTunes</h1>
+              <span>
+                <img src={ logoMusicFy } alt="logo MusicFy" />
+                <div>
+                  <h1 className="title-login">
+                    MusicFy
+                  </h1>
+                </div>
+              </span>
               <form className="form" data-testid="page-login">
                 <div className="inputs">
                   <div className="input-group">
