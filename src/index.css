@@ -68,12 +68,3 @@ code {
   background-color: rgb(52, 113, 223);
   border-radius: 20px;
 }
-
-
-@media only screen and (max-width: 600px) {
-  
-  .div-results {
-    height: 80vh;
-    width: 90vw;
-  }
-}
