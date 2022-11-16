@@ -11,9 +11,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 code {
@@ -44,7 +41,7 @@ code {
   flex-direction: column;
   justify-content: center;
   gap: 25px;
-  height: 80%;
+  height: 70%;
   width: 70%;
 }
 
@@ -70,4 +67,13 @@ code {
 .results::-webkit-scrollbar-thumb {
   background-color: rgb(52, 113, 223);
   border-radius: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+  .div-results {
+    height: 80vh;
+    width: 90vw;
+  }
 }

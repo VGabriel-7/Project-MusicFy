@@ -98,6 +98,7 @@ class Login extends React.Component {
                       onChange={ this.buttonValidation }
                       value={ name }
                       className="form-control"
+                      maxLength="8"
                     />
                   </div>
                   <div className="input-group">
