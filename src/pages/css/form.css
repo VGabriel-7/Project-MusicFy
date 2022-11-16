@@ -21,17 +21,16 @@
 }
 
 .login {
-  display: inline-block;
-  height: 60%;
-  left: 50%;
-  position: absolute;
-  top: 20%;
-  transform: translate(-50%);
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
 }
 
 .title-login {
   color: var(--textWhite);
-  font-size: 7em;
+  font-size: 7rem;
   margin-bottom: 50px;
 }
 
@@ -40,7 +39,7 @@
   display: flex;
 }
 
-.login span img {
+.login img {
   border-radius: 50%;
-  width: 6em;
+  width: 6rem;
 }

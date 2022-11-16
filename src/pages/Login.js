@@ -70,7 +70,7 @@ class Login extends React.Component {
         {loading
           ? <Loading />
           : (
-            <>
+            <div>
               <span>
                 <img src={ logoMusicFy } alt="logo MusicFy" />
                 <div>
@@ -129,7 +129,7 @@ class Login extends React.Component {
                   Entrar
                 </button>
               </form>
-            </>
+            </div>
           )}
       </div>
     );
